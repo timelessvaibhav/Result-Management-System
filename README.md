@@ -8,9 +8,9 @@ UpShot is a robust and user-friendly Student Record Management System developed 
 
 - **Single Teacher Access:** Currently, UpShot supports a single hardcoded teacher account in the database, ensuring simplicity and ease of use.
 
-- **Student Record Management:** Teachers can add, edit, and delete student records, including essential information such as roll numbers, names, dates of birth, and scores.
+- **Student Record Management:** The teacher can add, edit, and delete student records, including essential information such as roll numbers, names, dates of birth, and scores.
 
-- **Quick Search:** Users can search for student records using roll numbers and dates of birth, quickly retrieving the information they need.
+- **Quick Search:** Students can search for their results using roll numbers and dates of birth, quickly retrieving the information they need.
 
 - **Dashboard:** The dashboard provides an overview of application functionalities, making it easy to navigate, monitor and manage student data efficiently.
 
@@ -22,7 +22,6 @@ UpShot is a robust and user-friendly Student Record Management System developed 
 - Node.js
 - Express.js
 - MySQL
-- HTML/CSS
 
 ## Screenshots
 #### Home Page
