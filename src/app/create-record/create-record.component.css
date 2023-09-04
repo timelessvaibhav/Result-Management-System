@@ -1,0 +1,96 @@
+body {
+  min-height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  background: url("../../assets/Images/Create.jpg")
+    no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Acme", sans-serif;
+  color: white;
+  text-align: center;
+}
+#navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  top: 0px;
+  font-family: "Acme", sans-serif;
+  background-color: rgba(0, 0, 0, 0.594);
+}
+#navbar ul {
+  display: flex;
+}
+
+#navbar::before {
+  content: "";
+  background-color: black;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+#navbar ul li {
+  list-style: none;
+  font-size: 1.2rem;
+}
+#navbar ul li a {
+  color: white;
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 2px;
+  padding-right: 30px;
+
+  text-decoration: none;
+  border-radius: 5px;
+}
+#navbar ul li a:hover {
+  color: gray;
+}
+.entrysec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-family: "Acme", sans-serif;
+  font-size: 1.2rem;
+}
+
+.inputf {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.inputf label {
+  margin-right: 10px;
+  font-size: large;
+}
+
+.inputf input {
+  margin: 9px;
+  border-radius: 23px;
+  font-family: "Acme", sans-serif;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.entrybox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  font-family: "Acme", sans-serif;
+  border-radius: 23px;
+  padding: 15px 45px;
+}

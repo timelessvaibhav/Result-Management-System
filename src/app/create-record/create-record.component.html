@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Record</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav id="navbar">
+      <ul>
+        <li class="item"><a routerLink="/view">View Records</a></li>
+        <li class="item"><a routerLink="/dashboard">Dashboard</a></li>
+      </ul>
+    </nav>
+    <section class="entrysec">
+      <h2>Create a new Student record</h2>
+      <div *ngIf="errorMessage" class="error">
+        <p>{{ errorMessage }}</p>
+      </div>
+      <div *ngIf="successMessage" class="success">
+        <p>{{ successMessage }}</p>
+      </div>
+      <div class="entrybox">
+        <form (ngSubmit)="onSubmit()" method="post" class="entryform">
+          <div class="inputf">
+            <label for="rollno">Roll No.:</label>
+            <input
+              type="text"
+              id="rollno"
+              name="rollno"
+              [(ngModel)]="formData.rollno"
+              placeholder="Enter Roll No."
+            />
+          </div>
+          <div class="inputf">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              [(ngModel)]="formData.name"
+              placeholder="Enter Name"
+            />
+          </div>
+          <div class="inputf">
+            <label for="dob">Date of Birth:</label>
+            <input
+              type="date"
+              id="dob"
+              name="dob"
+              [(ngModel)]="formData.dob"
+              placeholder="Select Date of Birth"
+            />
+          </div>
+          <div class="inputf">
+            <label for="score">Score:</label>
+            <input
+              type="number"
+              id="score"
+              name="score"
+              [(ngModel)]="formData.score"
+              placeholder="Enter Score"
+            />
+          </div>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

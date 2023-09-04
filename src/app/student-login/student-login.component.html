@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Search Result</h1>
+    <form (submit)="login()">
+      <label for="rollNumber">Roll Number:</label>
+      <input type="text" id="rollNumber" name="rollNumber" placeholder="Enter your roll number" required [(ngModel)]="rollNumber">
+      <div class="error-message" *ngIf="rollError">{{ rollError }}</div>
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" placeholder="Enter your date of birth" required [(ngModel)]="dob">
+      <div class="error-message" *ngIf="dateError">{{ dateError }}</div>
+      <button type="submit">Search</button>
+    </form>
+    <div *ngIf="errorMessage" class="error-message">
+        <p>{{ errorMessage }}</p>
+      </div>
+  </div>
+</body>
+</html>

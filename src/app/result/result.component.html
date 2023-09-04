@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="background">
+      <div class="container">
+        <h2>Student Result</h2>
+        <div *ngIf="result">
+          <p>Roll Number: {{ result.rollno }}</p>
+          <p>Name: {{ result.name }}</p>
+          <p>Date of Birth: {{ result.dob | date : "dd/MM/yyyy" }}</p>
+          <p>Score: {{ result.score }}</p>
+        </div>
+        <div *ngIf="!result" class="no-result">
+          <p>No result found for the provided roll number and date of birth.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&display=swap"
+      rel="stylesheet"
+    />
+    <title>View Records</title>
+  </head>
+
+  <body>
+    <nav id="navbar">
+      <ul>
+        <li class="item"><a routerLink="/create">Create Record</a></li>
+        <li class="item"><a routerLink="/dashboard">Dashboard</a></li>
+      </ul>
+    </nav>
+    <section class="tablesec">
+      <h1>Student Records</h1>
+      <h3>
+        Click on the values you want to edit to edit them in place and then
+        click on save to save the changes
+      </h3>
+
+      <div class="tablebox">
+        <table cellspacing="20" cellpadding="1">
+          <thead>
+            <tr>
+              <th>Roll No.</th>
+              <th>Name</th>
+              <th>DOB</th>
+              <th>Score</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let record of records">
+              <td>
+                <input
+                  type="text"
+                  [value]="record.rollno"
+                  (input)="onEdit(record, 'rollno', $event)"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  [value]="record.name"
+                  (input)="onEdit(record, 'name', $event)"
+                />
+              </td>
+
+              <td>
+                <input
+                  type="text"
+                  [value]="formattedDOB(record.dob)"
+                  (input)="onEdit(record, 'dob', $event)"
+                />
+              </td>
+
+              <td>
+                <input
+                  type="text"
+                  [value]="record.score"
+                  (input)="onEdit(record, 'score', $event)"
+                />
+              </td>
+              <td>
+                <button class="btn" (click)="saveRecord(record)">Save</button>
+              </td>
+              <td>
+                <button class="btn" (click)="deleteRecord(record)">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </body>
+</html>

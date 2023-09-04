@@ -1,0 +1,34 @@
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    background: url('../../assets/Images/Home.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Acme', sans-serif;
+    color: white;
+    height: 100vh;
+    text-align: center;
+}
+  .btn {
+    background-color: black;
+    color: white;
+    font-family: "Acme", sans-serif;
+    border-radius: 23px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    cursor: pointer;
+  }
+  .btn.center {
+    display: inline-block; /* Add this line to make the buttons inline */
+    margin: 0 10px;
+  }
+  
+  
