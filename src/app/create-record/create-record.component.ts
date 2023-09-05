@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-create-record',
@@ -75,8 +75,14 @@ export class CreateRecordComponent {
         this.formData.dob = '';
         this.formData.score = '';
       },
-      (error: any) => {
-        this.errorMessage = error.error.message;
+      (error: HttpErrorResponse) => {
+        if (error.status === 409) {
+          // Handle conflict error (409)
+          this.errorMessage = error.error.message;
+        } else {
+          // Handle other errors
+          this.errorMessage = 'An error occurred while submitting the record.';
+        }
         console.error('Error submitting record:', error);
       }
     );

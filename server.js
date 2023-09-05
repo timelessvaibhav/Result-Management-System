@@ -127,6 +127,17 @@ app.post("/submit", async (req, res) => {
   }
 
   try {
+    // Check if a record already exists for the given roll number
+    const [existingRecord] = await pool
+      .promise()
+      .query("SELECT id FROM students WHERE rollno = ?", [rollno]);
+
+    if (existingRecord.length > 0) {
+      return res
+        .status(409)
+        .json({ message: "Record already exists for this Roll No." });
+    }
+
     // Create a new record in the database
     await pool
       .promise()
